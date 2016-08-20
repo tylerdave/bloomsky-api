@@ -11,12 +11,10 @@ BloomSky API
 
 A simple Python client for the BloomSky API.
 
-*Note: This package and its maintainer are not affiliated with BloomSky and/or
-Weatherlution*
+*Note: Neither this package nor its maintainer are affiliated with BloomSky.*
 
 For more information about the BloomSky device and its API, see: 
 http://weatherlution.com/bloomsky-api/
-
 
 
 Prerequisites
