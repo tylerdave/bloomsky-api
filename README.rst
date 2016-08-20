@@ -23,8 +23,11 @@ Prerequisites
 * Python (2.7, 3.3, 3.4, 3.5)
 * BloomSky API key (get it here: https://dashboard.bloomsky.com/)
 
+Getting Started
+---------------
+
 Installation
-------------
+~~~~~~~~~~~~
 
 .. code-block:: bash
 
@@ -32,7 +35,7 @@ Installation
 
 
 Usage
------
+~~~~~
 
 You can either store the API key in an environment variable named
 `BLOOMSKY_API_KEY` or provide it as an argument when creating the client.
@@ -54,7 +57,12 @@ You can either store the API key in an environment variable named
   data = client.get_data()
 
 Data
-----
+~~~~
 
 The returned data contains all of the information from the API response but
 with more Pythonic names and data types.
+
+Documentation
+-------------
+
+For more information, see the documentation: http://bloomsky-api.readthedocs.io/
