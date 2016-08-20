@@ -2,8 +2,7 @@
 Contributing
 ============
 
-Contributions are welcome, and they are greatly appreciated! Every
-little bit helps, and credit will always be given.
+Contributions of all types are welcome!
 
 You can contribute in many ways:
 
@@ -13,34 +12,35 @@ Types of Contributions
 Report Bugs
 ~~~~~~~~~~~
 
-Report bugs at https://github.com/tylerdave/bloomsky-api/issues.
+If you think something's not working correctly, report it here: 
+https://github.com/tylerdave/bloomsky-api/issues.
 
 If you are reporting a bug, please include:
 
-* Any details about your local setup that might be helpful in troubleshooting.
 * Detailed steps to reproduce the bug.
+* Any details about your local setup that might be helpful in troubleshooting.
 
 Fix Bugs
 ~~~~~~~~
 
 Look through the GitHub issues for bugs. Anything tagged with "bug"
-is open to whoever wants to implement it.
+is open to whomever wants to implement it.
 
 Implement Features
 ~~~~~~~~~~~~~~~~~~
 
 Look through the GitHub issues for features. Anything tagged with "feature"
-is open to whoever wants to implement it.
+is open to whomever wants to implement it.
 
 Write Documentation
 ~~~~~~~~~~~~~~~~~~~
 
 BloomSky API could always use more documentation, whether
-as part of the official BloomSky API docs, in docstrings,
-or even on the web in blog posts, articles, and such.
+as part of the BloomSky API docs, in docstrings, or even on the web in blog
+posts, articles, and such.
 
-Submit Feedback
-~~~~~~~~~~~~~~~
+New Features & Feedback
+~~~~~~~~~~~~~~~~~~~~~~~
 
 The best way to send feedback is to file an issue at https://github.com/tylerdave/bloomsky-api/issues.
 
