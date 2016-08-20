@@ -81,7 +81,7 @@ class BloomSkyAPIResponse(object):
         return "{0}".format(self._json)
 
 
-class BloomSkyClient(object):
+class BloomSkyAPIClient(object):
     """ A client for interacting with the BloomSky API """
 
     def __init__(self, api_key=None, api_url=None):

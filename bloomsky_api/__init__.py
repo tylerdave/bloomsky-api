@@ -7,4 +7,9 @@ __email__ = 'tylerdave@tylerdave.com'
 __version__ = get_versions()['version']
 del get_versions
 
-from . import bloomsky_api, cli
+from .bloomsky_api import BloomSkyAPIResponse, BloomSkyAPIClient
+
+__all__ = [
+        'BloomSkyAPIClient',
+        'BloomSkyAPIResponse',
+        ]

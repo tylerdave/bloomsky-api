@@ -36,23 +36,27 @@ Installation
 Usage
 -----
 
-You can either store the API key in an environment variable named BLOOMSKY_API_KEY or provide it as an argument when creating the client.
+You can either store the API key in an environment variable named
+`BLOOMSKY_API_KEY` or provide it as an argument when creating the client.
 
 **Stored in environment variable:**
 
 .. code-block:: python
 
-  from bloomsky_api import bloomsky_api
-  client = bloomsky_api.BloomSkyClient()
+  import bloomsky_api
+  client = bloomsky_api.BloomSkyAPIClient()
   data = client.get_data()
 
-**Provided via parameter:**
+**Provided via argument:**
   
 .. code-block:: python
 
-  from bloomsky_api import bloomsky_api
-  client = bloomsky_api.BloomSkyClient(api_key='Your-real-API-key-goes-here')
+  import bloomsky_api
+  client = bloomsky_api.BloomSkyAPIClient(api_key='Your-real-API-key-goes-here')
   data = client.get_data()
+
+Data
+----
 
 The returned data contains all of the information from the API response but
 with more Pythonic names and data types.
