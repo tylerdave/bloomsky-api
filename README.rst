@@ -8,6 +8,9 @@ BloomSky API
 .. image:: https://img.shields.io/pypi/v/bloomsky-api.svg
         :target: https://pypi.python.org/pypi/bloomsky-api
 
+.. image:: https://readthedocs.org/projects/bloomsky-api/badge/?version=latest
+    :target: http://bloomsky-api.readthedocs.io/en/latest/?badge=latest
+    :alt: Documentation Status
 
 A simple Python client for the BloomSky API.
 
@@ -62,7 +65,3 @@ Data
 The returned data contains all of the information from the API response but
 with more Pythonic names and data types.
 
-Documentation
--------------
-
-For more information, see the documentation: http://bloomsky-api.readthedocs.io/
