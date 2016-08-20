@@ -23,23 +23,33 @@ Prerequisites
 -------------
 
 * Python (2.7, 3.3, 3.4, 3.5)
-* BloomSky API key (get it here)
+* BloomSky API key (get it here: https://dashboard.bloomsky.com/)
 
 Installation
 ------------
 
-```bash
-pip install BloomSky-API
-```
+.. code-block:: bash
+
+  pip install BloomSky-API
+
 
 Usage
 -----
 
-```python
-from bloomsky_api import bloomsky_api
-client = bloomsky_api.BloomSkyClient()
-data = client.get_data()
-```
+You can either store the API key in an environment variable named BLOOMSKY_API_KEY or provide it as an argument when creating the client.
 
+**Via environment variable:**
 
+.. code-block:: python
 
+  from bloomsky_api import bloomsky_api
+  client = bloomsky_api.BloomSkyClient()
+  data = client.get_data()
+
+**Via parameter:**
+  
+.. code-block:: python
+
+  from bloomsky_api import bloomsky_api
+  client = bloomsky_api.BloomSkyClient(api_key='Your-real-API-key-goes-here')
+  data = client.get_data()
