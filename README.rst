@@ -28,15 +28,14 @@ Prerequisites
 Installation
 ------------
 
-```
+```bash
 pip install BloomSky-API
 ```
 
 Usage
 -----
 
-
-```
+```python
 from bloomsky_api import bloomsky_api
 client = bloomsky_api.BloomSkyClient()
 data = client.get_data()
