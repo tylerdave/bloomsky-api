@@ -1,6 +1,7 @@
 import os
 import requests
 from datetime import datetime
+from dateutil import tz
 
 DEFAULT_API_URL = 'https://thirdpartyapi.appspot.com/api/skydata/'
 
@@ -62,19 +63,22 @@ class BloomSkyAPIResponse(object):
     def _normalize_data(self):
         for device in self.data:
             device['is_dst'] = bool(device['is_dst'])
+            offset_hours = device['utc_offset']
             device['outdoor']['data_timestamp'] = self._timestamp_to_iso_format(
-                    device['outdoor']['data_timestamp'])
+                    device['outdoor']['data_timestamp'], offset_hours)
             device['outdoor']['image_timestamp'] = self._timestamp_to_iso_format(
-                    device['outdoor']['image_timestamp'])
+                    device['outdoor']['image_timestamp'], offset_hours)
             device['outdoor']['uv_index'] = int(device['outdoor']['uv_index'])
             device['registered_timestamp'] = self._timestamp_to_iso_format(
-                    device['registered_timestamp'])
+                    device['registered_timestamp'], offset_hours)
 
     @staticmethod
-    def _timestamp_to_iso_format(timestamp):
+    def _timestamp_to_iso_format(timestamp, offset_hours=0):
         try:
-            return datetime.fromtimestamp(timestamp).isoformat()
+            pseudo_timezone = tz.tzoffset('Unknown', int(offset_hours * 3600))
+            return datetime.fromtimestamp(timestamp, pseudo_timezone).isoformat()
         except:
+            raise
             return None
 
     def __repr__(self):
