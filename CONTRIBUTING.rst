@@ -65,7 +65,7 @@ Ready to contribute? Here's how to set up `BloomSky-API` for local development.
 
     $ mkvirtualenv bloomsky-api
     $ cd bloomsky-api/
-    $ python setup.py develop
+    $ pip install -e .[develop]
 
 4. Create a branch for local development::
 

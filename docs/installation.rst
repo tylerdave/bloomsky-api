@@ -2,11 +2,16 @@
 Installation
 ============
 
-At the command line::
+Install using pip:
 
-    $ pip install BloomSky-API
+.. code-block:: bash
 
-Or, if you have virtualenvwrapper installed::
+  pip install BloomSky-API
 
-    $ mkvirtualenv BloomSky-API
-    $ pip install BloomSky-API
+If you'd like to use the optional command-line client, install the `cli` "extras"
+using this command:
+
+.. code-block:: bash
+
+  pip install BloomSky-API[cli]
+
