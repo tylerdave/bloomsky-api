@@ -11,4 +11,4 @@ install:
   - "pip --version"
   - "pip install .[develop]"
 # command to run tests
-script: python setup.py test
+script: python setup.py test --addopts "-vv"
