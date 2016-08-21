@@ -17,11 +17,18 @@ with open(path.join(here, 'HISTORY.rst'), encoding='utf-8') as history_file:
     history = history_file.read().replace('.. :changelog:', '')
 
 requirements = [
-    'requests',
-]
-
+        'requests',
+        ]
 test_requirements = [
-]
+        'tox',
+        'pytest',
+        'pytest-runner',
+        'responses',
+        ]
+cli_requirements = [
+        'click',
+        ]
+develop_requirements = test_requirements + cli_requirements
 
 setup(
     name='BloomSky-API',
@@ -56,6 +63,7 @@ setup(
     test_suite='tests',
     tests_require=test_requirements,
     extras_require={
-        'cli': ["click>=5"],
+        'cli': cli_requirements,
+        'develop': develop_requirements,
         }
 )
