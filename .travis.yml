@@ -8,6 +8,7 @@ python:
 # command to install dependencies
 install:
   - "pip install -U pip"
+  - "pip --version"
   - "pip install .[develop]"
 # command to run tests
 script: python setup.py test
