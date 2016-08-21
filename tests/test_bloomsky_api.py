@@ -25,7 +25,7 @@ class TestBloomskyAPI(unittest.TestCase):
                   content_type='application/json')
         client = bloomsky_api.BloomSkyAPIClient(api_key='totally-fake-key')
         data = client.get_data()
-        assert(data == json.loads(GOOD_DATA_RESPONSE_JSON))
+        assert(data == json.loads(str(GOOD_DATA_RESPONSE_JSON)))
 
     def tearDown(self):
         pass
