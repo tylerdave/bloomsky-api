@@ -1,0 +1,5 @@
+click
+pytest
+pytest-runner
+requests
+responses
