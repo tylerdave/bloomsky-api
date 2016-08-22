@@ -27,7 +27,8 @@ class TestBloomskyCLI(unittest.TestCase):
         responses.add(responses.GET, url,
                   body=GOOD_API_RESPONSE, status=200,
                   content_type='application/json')
-        result = self.runner.invoke(bloomsky_api.cli.cli, ['--json-indent', '1'])
-        output = result.output
-        assert(json.loads(output) == json.loads(str(GOOD_CLI_OUTPUT_JSON)))
+        result = self.runner.invoke(
+                bloomsky_api.cli.cli, ['--api-key', 'key-would-go-here'])
+        output = json.loads(result.output)
+        assert(output == json.loads(str(GOOD_CLI_OUTPUT_JSON)))
 
