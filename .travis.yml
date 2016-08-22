@@ -10,5 +10,7 @@ install:
   - "pip install -U pip"
   - "pip --version"
   - "pip install .[develop]"
+  - "pip install pytest-cov coveralls"
 # command to run tests
-script: python setup.py test --addopts "-vv"
+script: python setup.py test --addopts "-vv --cov bloomsky_api"
+after_success: coveralls
