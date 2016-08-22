@@ -1,0 +1,2 @@
+[report]
+omit = bloomsky_api/_version.py
