@@ -8,6 +8,9 @@ BloomSky API
 .. image:: https://img.shields.io/pypi/v/bloomsky-api.svg
         :target: https://pypi.python.org/pypi/bloomsky-api
 
+.. image:: https://coveralls.io/repos/github/tylerdave/bloomsky-api/badge.svg?branch=master
+    :target: https://coveralls.io/github/tylerdave/bloomsky-api?branch=master
+
 .. image:: https://readthedocs.org/projects/bloomsky-api/badge/?version=latest
     :target: http://bloomsky-api.readthedocs.io/en/latest/?badge=latest
     :alt: Documentation Status
