@@ -3,6 +3,8 @@ import requests
 from datetime import datetime
 from dateutil import tz
 
+from .exceptions import APIKeyMissing
+
 DEFAULT_API_URL = 'https://thirdpartyapi.appspot.com/api/skydata/'
 
 
@@ -93,6 +95,8 @@ class BloomSkyAPIClient(object):
         self.api_url = self._get_api_url(api_url)
 
     def request_data(self):
+        if self.api_key is None:
+            raise APIKeyMissing("No API key provided. Set via env var or argument.")
         headers = {'Authorization': self.api_key}
         response = requests.get(self.api_url, headers=headers)
         response.raise_for_status()
