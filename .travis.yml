@@ -1,16 +1,17 @@
 language: python
 python:
-  - "2.7"
-  - "3.3"
-  - "3.4"
-  - "3.5"
-  - "pypy"
-# command to install dependencies
+- '2.7'
+- '3.3'
+- '3.4'
+- '3.5'
+- pypy
 install:
-  - "pip install -U pip"
-  - "pip --version"
-  - "pip install .[develop]"
-  - "pip install pytest-cov coveralls"
-# command to run tests
+- pip install -U pip
+- pip --version
+- pip install .[develop]
+- pip install pytest-cov coveralls
 script: python setup.py test --addopts "-vv --cov bloomsky_api"
 after_success: coveralls
+env:
+  global:
+    secure: LSfC+z9rTVnec47zPDMqZ9dJA2JaDZb9U63dkyKu3ZFzv4Xy7viaAf5XAwP9xDZC2F6ayg8CxZXf/5TA3fcD+CPDyRIJreq3nUtaJo28mbL1JP9J/UvCe4mUH+GASIs2g3L2rZwo3ABOuwzcUrfqCDPJszoR2efiARZBMQcU8g1RFWqIBkSE1ktr0SdNwao0iVEVsRsZrCe8P4uxjLp1V1Coo0y6uU1fdbdnysEiOFEsMyVhtjOH/pxrWKC5Zs7ddCOKVWrZm3gisBXqc3NKdAkuq4M1EpcqnNq4hRvudQMudaRzBQDfWNtpg+m0+uzwvC0/h2cv2WF/wxJX36VusoZongNjyMYywoDwUi8T3SDUmk5exZD64MPVb9EFDjtfaXuyHtC8o3iltK0LpQUZ3QQkXujhbwbowidT53fvzfGQcHf3aqOyxiuBtWPQPuCVHChOrxIG2LGS2T+Awpv9Pr5TvT7j0F+dDPNZhF2sFyOZLcF64r3P2yMCdj/disauWznl4oVB14GS54cKddirvDS+cGcJlWMhp8eOtexbCVM/2PLcLXEwn8VcMOBM+GydW11pKnM0T7rD7y+tAGBmxWzVpBpBlbOYpVvw+cVx+Nbau3cOYefgOie7Ez4o1KgUJA7x5jarl/ftgpI5ahHGWeIYiiijO1jrmdDDPjV+2ls=
