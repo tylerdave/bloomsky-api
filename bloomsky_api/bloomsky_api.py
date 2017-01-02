@@ -5,6 +5,7 @@ from dateutil import tz
 
 from .exceptions import APIKeyMissing
 
+BLOOMSKY_API_KEY_VARIABLE = 'BLOOMSKY_API_KEY'
 DEFAULT_API_URL = 'https://thirdpartyapi.appspot.com/api/skydata/'
 
 
@@ -96,7 +97,8 @@ class BloomSkyAPIClient(object):
 
     def request_data(self):
         if self.api_key is None:
-            raise APIKeyMissing("No API key provided. Set via env var or argument.")
+            raise APIKeyMissing('No API key provided. Set via {0} environment'
+            ' variable or argument.'.format(BLOOMSKY_API_KEY_VARIABLE))
         headers = {'Authorization': self.api_key}
         response = requests.get(self.api_url, headers=headers)
         response.raise_for_status()
@@ -110,7 +112,7 @@ class BloomSkyAPIClient(object):
     def _get_api_key(provided_api_key=None):
         if provided_api_key is not None:
             return provided_api_key
-        return os.environ.get('BLOOMSKY_API_KEY')
+        return os.environ.get(BLOOMSKY_API_KEY_VARIABLE)
         # TODO: consider looking for key in config file too?
 
     @staticmethod
