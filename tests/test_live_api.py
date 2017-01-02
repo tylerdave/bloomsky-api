@@ -12,7 +12,7 @@ def is_travis_but_not_cron_or_api():
         reason='Running via Travis but not a cron')
 class TestClickTutorial(object):
 
-    def setup_method(self):
+    def setup(self):
         self.runner = CliRunner()
 
     # FIXME: check more of the output and define valid values via env vars
