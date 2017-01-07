@@ -28,6 +28,7 @@ class BloomSkyAPIResponse(object):
             ('VideoList', 'video_urls'),
             ]
     data_field_mapping = [
+            ('DeviceType', 'device_type'),
             ('Humidity', 'humidity'),
             ('ImageTS', 'image_timestamp'),
             ('ImageURL', 'image_url'),
