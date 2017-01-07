@@ -6,7 +6,7 @@ from dateutil import tz
 from .exceptions import APIKeyMissing
 
 BLOOMSKY_API_KEY_VARIABLE = 'BLOOMSKY_API_KEY'
-DEFAULT_API_URL = 'https://thirdpartyapi.appspot.com/api/skydata/'
+DEFAULT_API_URL = 'https://api.bloomsky.com/api/skydata/'
 
 
 class BloomSkyAPIResponse(object):
