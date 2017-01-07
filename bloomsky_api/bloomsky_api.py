@@ -95,17 +95,20 @@ class BloomSkyAPIClient(object):
         self.api_key = self._get_api_key(api_key)
         self.api_url = self._get_api_url(api_url)
 
-    def request_data(self):
+    def request_data(self, intl_units=False):
         if self.api_key is None:
             raise APIKeyMissing('No API key provided. Set via {0} environment'
             ' variable or argument.'.format(BLOOMSKY_API_KEY_VARIABLE))
         headers = {'Authorization': self.api_key}
-        response = requests.get(self.api_url, headers=headers)
+        params = {}
+        if intl_units:
+            params['unit'] = 'intl'
+        response = requests.get(self.api_url, headers=headers, params=params)
         response.raise_for_status()
         return BloomSkyAPIResponse(response)
 
-    def get_data(self):
-        response = self.request_data()
+    def get_data(self, intl_units=False):
+        response = self.request_data(intl_units=intl_units)
         return response.data
 
     @staticmethod

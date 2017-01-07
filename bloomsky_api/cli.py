@@ -9,10 +9,12 @@ from .bloomsky_api import BloomSkyAPIClient, BLOOMSKY_API_KEY_VARIABLE
             BLOOMSKY_API_KEY_VARIABLE))
 @click.option('--api-url', help='Override BloomSky API endpoint URL.')
 @click.option('--json-indent', type=int, default=None,
-help='Number of spaces to indent nested JSON levels.')
-def cli(api_key, api_url, json_indent):
+        help='Number of spaces to indent nested JSON levels.')
+@click.option('--intl-units', '-i', is_flag=True,
+        help='Use SI units instead of the default US.')
+def cli(api_key, api_url, json_indent, intl_units):
     client = BloomSkyAPIClient(api_key=api_key, api_url=api_url)
-    data = client.get_data()
+    data = client.get_data(intl_units=intl_units)
     click.echo(json.dumps(data, indent=json_indent))
 
 if __name__ == '__main__':
