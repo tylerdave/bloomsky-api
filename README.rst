@@ -39,6 +39,12 @@ Installation
 
   pip install BloomSky-API
 
+To install optional command-line interface (requires click):
+
+.. code-block:: bash
+
+  pip install BloomSky-API[cli]
+
 
 Usage
 ~~~~~
@@ -61,6 +67,27 @@ You can either store the API key in an environment variable named
   import bloomsky_api
   client = bloomsky_api.BloomSkyAPIClient(api_key='Your-real-API-key-goes-here')
   data = client.get_data()
+
+
+Command Line Interface
+~~~~~~~~~~~~~~~~~~~~~~
+
+If you install the optional command-line interface, the `bloomsky-api` command will be available. Usage:
+
+.. code-block:: none
+
+  Usage: bloomsky-api [OPTIONS]
+  
+    Retrieve data from the BloomSky API and output it as JSON.
+  
+  Options:
+    --api-key TEXT         BloomSky API key (can be set via env var
+                           BLOOMSKY_API_KEY).
+    --api-url TEXT         Override BloomSky API endpoint URL.
+    --json-indent INTEGER  Number of spaces to indent nested JSON levels.
+    --help                 Show this message and exit.
+  
+
 
 Data
 ~~~~
