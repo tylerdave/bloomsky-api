@@ -85,8 +85,9 @@ If you install the optional command-line interface, the `bloomsky-api` command w
                            BLOOMSKY_API_KEY).
     --api-url TEXT         Override BloomSky API endpoint URL.
     --json-indent INTEGER  Number of spaces to indent nested JSON levels.
+    -i, --intl-units       Use SI units instead of the default US.
+    --raw                  Return raw response instead of remapped keys.
     --help                 Show this message and exit.
-  
 
 
 Data
