@@ -1,5 +1,5 @@
 click==6.7
-pytest
+pytest==3.2.3
 pytest-runner
 requests
 responses
