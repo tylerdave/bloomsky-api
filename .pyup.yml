@@ -1,0 +1,5 @@
+update: insecure
+pin: True
+# branch:
+# schedule: "every day"
+# search: True
