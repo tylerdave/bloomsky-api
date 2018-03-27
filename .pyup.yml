@@ -1,0 +1,5 @@
+# see: https://pyup.io/docs/bot/config/
+update: insecure
+assignees:
+    - tylerdave
+
