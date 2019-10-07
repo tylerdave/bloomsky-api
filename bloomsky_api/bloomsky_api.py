@@ -3,7 +3,7 @@ import requests
 from datetime import datetime
 from dateutil import tz
 
-from .exceptions import APIKeyMissing
+from .exceptions import APIKeyMissing, APIKeyInvalid, BloomSkyConnection, NoDevicesFound
 
 BLOOMSKY_API_KEY_VARIABLE = 'BLOOMSKY_API_KEY'
 DEFAULT_API_URL = 'https://api.bloomsky.com/api/skydata/'
@@ -104,12 +104,22 @@ class BloomSkyAPIClient(object):
         params = {}
         if intl_units:
             params['unit'] = 'intl'
-        response = requests.get(self.api_url, headers=headers, params=params)
-        response.raise_for_status()
+
+        try:
+            response = requests.get(self.api_url, headers=headers, params=params)
+            response.raise_for_status()
+        except requests.exceptions.ConnectionError:
+            raise BloomSkyConnection("Error connecting to bloomsky")
+        except requests.exceptions.HTTPError:
+            raise APIKeyInvalid("Invalid API Key")
+        if response.status_code == 405:
+            raise NoDevicesFound("No bloomsky devices found")
+
         return BloomSkyAPIResponse(response)
 
     def get_data(self, intl_units=False):
         response = self.request_data(intl_units=intl_units)
+
         return response.data
 
     @staticmethod
