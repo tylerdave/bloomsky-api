@@ -41,6 +41,15 @@ class BloomSkyAPIResponse(object):
             ('UVIndex', 'uv_index'),
             ('Voltage', 'voltage'),
             ]
+    storm_field_mapping = [
+        ('UVIndex', 'uv_index'),
+        ('WindDirection', 'wind_direction'),
+        ('RainDaily', 'rain_daily'),
+        ('WindGust', 'wind_gust'),
+        ('SustainedWindSpeed', 'sustained_wind_speed'),
+        ('RainRate', 'rain_rate'),
+        ('24hRain', '24_hour_rain'),
+        ]
 
     def __init__(self, response):
         self._raw_response = response
@@ -62,6 +71,10 @@ class BloomSkyAPIResponse(object):
                 'humidity': indoor.get('Humidity'),
                 'temperature': indoor.get('Temperature'),
                 }
+        remapped_data['storm_data'] = {}
+        for old_name, new_name in cls.storm_field_mapping:
+            remapped_data['storm_data'][new_name] = \
+                response_data['Storm'].get(old_name)
         return remapped_data
 
     def _normalize_data(self):
@@ -125,6 +138,3 @@ class BloomSkyAPIClient(object):
             return provided_api_url
         else:
             return DEFAULT_API_URL
-
-
-
