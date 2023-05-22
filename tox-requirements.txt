@@ -1,5 +1,5 @@
 click==6.7
 pytest-runner==4.2
 pytest==3.5.0
-requests==2.20.0
+requests==2.31.0
 responses==0.8.1
